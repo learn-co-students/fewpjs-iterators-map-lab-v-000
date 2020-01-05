@@ -12,5 +12,15 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(function(tutorial){
+    tutorial = tutorial.split(' ')
+    for (let i = 0; i < tutorial.length; i++){
+      tutorial[i] =  tutorial[i].charAt(0).toUpperCase() + tutorial[i].slice(1)
+      
+    }
+    return tutorial.join(' ')
+  })
 }
+
+//This code snippet will use the JavaScript function charAt to get the character at a certain index.
+//Next we use the uppercase function in JavaScript to set this string to be in capitals.
