@@ -11,6 +11,23 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+const titleCasedAlt = (tutorials) => {
+  return tutorials.map(function(sentance){
+    return sentance.split(' ')
+    .map(s => {
+      return s[0].toUpperCase() + s.slice(1)
+        }).join(' ')
+    })
+  }
+
+// why can I invoke the function below without an argument i.e. titledCased() as code above i.e. titleCasedAlt(tutorials)? //  With above I have to call it as titledCased(tutorials) or else error is "Cannot read property 'map' of undefined at titleCasedAlt -> tutorials doesn't seem to be picked up
+
+
+const titleCased =() => {
+  return tutorials.map(function(sentance){
+    return sentance.split(' ')
+     .map(s => {
+       return s[0].toUpperCase() + s.slice(1)
+           }).join(' ')
+      })
 }
