@@ -13,14 +13,12 @@ const tutorials = [
 
 
 let tutorialWords = tutorials.map(function (tutorial) {
-  return tutorial.charAt(0).toUpperCase() + tutorial.substr(1);
+  tutorial.split(" ").map(function (word) {
+    word[0].toUpperCase() + word.slice(1);
+  });
 });
 
-let tutorialJoin = tutorialWords.map (function (tutorialWord) {
-   tutorialWord.map(function (word) {
-    console.log(word.(0).toUpperCase() + word.slice(1));
- })
-})
+let tutorialJoin = tutorialWords.join(" ")
 
 function titleCased() {
   return tutorialJoin
