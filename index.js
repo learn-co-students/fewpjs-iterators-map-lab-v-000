@@ -12,14 +12,15 @@ const tutorials = [
 ];
 
 
-let tutorialWords = tutorials.map(function (tutorial) {
-  tutorial.split(" ").map(function (word) {
-    word[0].toUpperCase() + word.slice(1);
+let tutorialWords = words.map(function (tutorial) {
+  let words = tutorials.split(" ");
+  let capitalizedWords = []
+   words.map(function (word) {
+     capitalizedWords.push(element[0].toUpperCase() + word.slice(1, word.length));
   });
+   return capitalizedWords.join(' ');
 });
 
-let tutorialJoin = tutorialWords.join(" ")
-
 function titleCased() {
-  return tutorialJoin
+  return tutorialWords
 }
