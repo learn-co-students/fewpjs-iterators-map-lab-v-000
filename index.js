@@ -12,15 +12,25 @@ const tutorials = [
 ];
 
 
-let tutorialWords = words.map(function (tutorial) {
-  let words = tutorials.split(" ");
-  let capitalizedWords = []
-   words.map(function (word) {
-     capitalizedWords.push(element[0].toUpperCase() + word.slice(1, word.length));
-  });
-   return capitalizedWords.join(' ');
-});
+function tutorialWords(tutorials) {
+  let words = tutorials.map(tutorial => tutorial.split(" ")); 
+  let capitalizedWords = [];
+   capitalizedWords.push(words.map(function(word) { 
+    return word.map(w => { 
+      return w[0].toUpperCase() + w.slice(1, w.length)
+      //let newWord = w[0].toUpperCase() + w.slice(1, w.length)
+      //console.log("w:" + w + " newWord:" + newWord)
+    })
+   
+   }));
+   let newWords = Array.prototype.concat.apply([], capitalizedWords);
+    return newWords.map(c => {
+      return c.map(a => {
+      return a.join(" ");
+    })
+   })
+  }
 
 function titleCased() {
-  return tutorialWords
+  return tutorialWords(tutorials)
 }
