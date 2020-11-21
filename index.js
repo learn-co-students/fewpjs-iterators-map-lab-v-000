@@ -17,14 +17,13 @@ function tutorialWords(tutorials) {
   let capitalizedWords = [];
    capitalizedWords.push(words.map(function(word) { 
     return word.map(w => { 
-      return w[0].toUpperCase() + w.slice(1, w.length)
       //let newWord = w[0].toUpperCase() + w.slice(1, w.length)
       //console.log("w:" + w + " newWord:" + newWord)
+      return w[0].toUpperCase() + w.slice(1, w.length)
     })
    
    }));
-   let newWords = Array.prototype.concat.apply([], capitalizedWords);
-    return newWords.map(c => {
+    return capitalizedWords.map(c => {
       return c.map(a => {
       return a.join(" ");
     })
@@ -32,5 +31,6 @@ function tutorialWords(tutorials) {
   }
 
 function titleCased() {
-  return tutorialWords(tutorials)
+   const flattenedArray = [].concat(...tutorialWords(tutorials));
+   return flattenedArray
 }
