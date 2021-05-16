@@ -11,6 +11,21 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+// yo, this was confusing! I see now from the test this WAS
+// supposed to return a function not an array to titleCased,
+// used solution to confirm
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(function(tutorial) {
+    let tutorialItems = tutorial.split(" ");
+    let tutorialRevised = [];
+    
+    for (const item of tutorialItems) {
+      tutorialRevised.push(`${item.split("")[0].toUpperCase()}${item.split("").slice(1).join("")}`);
+    }
+  
+    return tutorialRevised.join(" ");
+  })
+  // returned my own and commented out the below
+  // return tutorials
 }
+
