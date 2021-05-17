@@ -17,6 +17,5 @@ const titleCased = () => {
   })
 }
 
-const upcaseWord = (word) => {
-  return word.substring(0,1).toUpperCase() + word.substring(1)
+const upcaseWord = word => word.substring(0,1).toUpperCase() + word.substring(1)
 }
