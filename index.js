@@ -11,6 +11,8 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+// Regex FTW!!
+
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map( tut => tut.replace(/\b\w/gi, x => x.toUpperCase() ));
+};
